@@ -1,16 +1,9 @@
 import argparse
 from random import randrange
 
-parser = argparse.ArgumentParser(
-	prog='Counter',
-	description='''Converts numbers to hex and
-	outputs them in a specific range''',
-	epilog='Text at the bottom of help',
-	formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-parser.add_argument('-c', '--count', required=True,
-	type=int, help="count")
-parser.add_argument('-r', '--range', default=4,
-	type=int, help="counting range")
+parser = argparse.ArgumentParser(prog='Counter', description='Converts numbers to hex and outputs them in a specific range', epilog='Text at the bottom of help')
+parser.add_argument('-c', '--count', required=True,type=int, help='decima counter (if number = -1, generated random number)')
+parser.add_argument('-r', '--range', default=4,type=int, help="counting range (default: 4)")
 args = parser.parse_args()
 
 count = args.count
