@@ -6,17 +6,17 @@ parser.add_argument('-c', '--count', required=True,type=int, help='decima counte
 parser.add_argument('-r', '--range', default=4,type=int, help="counting range (default: 4)")
 args = parser.parse_args()
 
-count = args.count
+count_number = args.count
 count_range = args.range
 
-def Counter(count, count_range):
-	if count == -1:
-		count = randrange(16**count_range)
-	hex_cou = f"{hex(count)[2:]:-<{count_range}}"
+def Counter(count_number, count_range):
+	if count_number == -1:
+		count_number = randrange(16**count_range)
+	hex_count = f"{hex(count_number)[2:]:-<{count_range}}"
 
-	if len(hex_cou) > count_range:
-		hex_cou = "!" * count_range
-	return hex_cou
+	if len(hex_count) > count_range:
+		hex_count = "!" * count_range
+	return hex_count
 
-hex_cou = Counter(count, count_range)
-print("Count:", hex_cou)
+hex_count = Counter(count_number, count_range)
+print("Count:", hex_count)
